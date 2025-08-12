@@ -8,7 +8,7 @@ int main() {
     cin >> ch;
 
     if (ch >= 'A' && ch <= 'Z') {
-        // Convert to lowercase by adding difference between 'a' and 'A'
+        
         char lower = ch + ('a' - 'A');
         cout << "Lowercase character: " << lower << endl;
     } else {
@@ -17,3 +17,4 @@ int main() {
 
     return 0;
 }
+
