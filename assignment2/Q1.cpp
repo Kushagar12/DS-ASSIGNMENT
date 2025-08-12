@@ -1,22 +1,22 @@
 #include <iostream>
 using namespace std;
 
-// Binary Search function
+
 int binarySearch(int arr[], int size, int key) {
     int low = 0, high = size - 1;
 
     while (low <= high) {
-        int mid = low + (high - low) / 2;  // Avoid overflow
+        int mid = low + (high - low) / 2;  
 
         if (arr[mid] == key)
-            return mid; // Key found
+            return mid; 
         else if (arr[mid] < key)
-            low = mid + 1; // Search right half
+            low = mid + 1; 
         else
-            high = mid - 1; // Search left half
+            high = mid - 1; 
     }
 
-    return -1; // Key not found
+    return -1; 
 }
 
 int main() {
@@ -43,3 +43,4 @@ int main() {
 
     return 0;
 }
+
