@@ -1,6 +1,5 @@
 #include <iostream>
 #include <string>
-#include <algorithm>
 using namespace std;
 
 int main() {
@@ -8,7 +7,7 @@ int main() {
 
     cout << "Enter the number of strings: ";
     cin >> n;
-    cin.ignore(); // Clear newline character from input buffer
+    cin.ignore(); 
 
     string arr[n];
 
@@ -17,7 +16,7 @@ int main() {
         getline(cin, arr[i]);
     }
 
-    // Sort the array of strings
+    
     sort(arr, arr + n);
 
     cout << "\nStrings in alphabetical order:\n";
@@ -27,3 +26,4 @@ int main() {
 
     return 0;
 }
+
