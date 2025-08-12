@@ -6,7 +6,7 @@ const int imax = 100;
 void transpose(int arr[][imax], int r, int c) {
     int t[imax][imax]; 
 
-    // Transpose logic
+    
     for (int i = 0; i < c; i++) {
         for (int j = 0; j < r; j++) {
             t[i][j] = arr[j][i];
@@ -51,4 +51,5 @@ int main() {
 
     return 0;
 }
+
 
