@@ -14,7 +14,7 @@ int remove_Duplicates(int arr[], int n) {
     for (int i = 0; i < n; i++) {
         bool is_Duplicate = false;
 
-        // Check if arr[i] is already present in the new array
+        
         for (int j = 0; j < new_Size; j++) {
             if (arr[i] == arr[j]) {
                 is_Duplicate = true;
@@ -22,14 +22,14 @@ int remove_Duplicates(int arr[], int n) {
             }
         }
 
-        // If not duplicate, add to new array portion
+        
         if (!is_Duplicate) {
             arr[new_Size] = arr[i];
             new_Size++;
         }
     }
 
-    return new_Size; // Return new size of array
+    return new_Size; 
 }
 
 
@@ -54,4 +54,5 @@ int main() {
     cout << endl;
 
     return 0;
+
 }
