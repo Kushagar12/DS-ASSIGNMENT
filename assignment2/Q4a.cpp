@@ -11,10 +11,11 @@ int main() {
     cout << "Enter second string: ";
     getline(cin, str2);
 
-    // Concatenate using + operator
+    
     result = str1 + str2;
 
     cout << "Concatenated string: " << result << endl;
 
     return 0;
 }
+
