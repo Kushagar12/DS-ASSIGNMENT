@@ -9,9 +9,9 @@ void matrix_multiply(int arr[][imax], int brr[][imax], int r1, int r2, int c1, i
         return;
     }
 
-    int res[imax][imax] = {0}; // Declare result matrix with fixed size
+    int res[imax][imax] = {0}; 
 
-    // Multiply matrices
+    
     for (int i = 0; i < r1; i++) {
         for (int j = 0; j < c2; j++) {
             for (int k = 0; k < c1; k++) {
@@ -20,7 +20,7 @@ void matrix_multiply(int arr[][imax], int brr[][imax], int r1, int r2, int c1, i
         }
     }
 
-    // Print result
+    
     cout << "\nResult of matrix multiplication:\n";
     for (int i = 0; i < r1; i++) {
         for (int j = 0; j < c2; j++) {
@@ -64,3 +64,4 @@ int main() {
 
     return 0;
 }
+
