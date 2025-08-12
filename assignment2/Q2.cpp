@@ -3,26 +3,26 @@ using namespace std;
 
 void bubbleSort(int arr[], int n) {
     for (int i = 0; i < n - 1; i++) {
-        // Flag to check if any swapping happens
+        
         bool swapped = false;
 
-        // Last i elements are already sorted
+        
         for (int j = 0; j < n - i - 1; j++) {
 
-            // Swap if elements are in wrong order
+            
             if (arr[j] > arr[j + 1]) {
                 swap(arr[j], arr[j + 1]);
                 swapped = true;
             }
         }
 
-        // If no two elements were swapped in the inner loop, break
+        
         if (!swapped)
             break;
     }
 }
 
-// Function to print the array
+
 void printArray(int arr[], int size) {
     for (int i = 0; i < size; i++)
         cout << arr[i] << " ";
@@ -43,3 +43,4 @@ int main() {
 
     return 0;
 }
+
