@@ -4,7 +4,7 @@ using namespace std;
 const int imax = 100;
 
 void transpose(int arr[][imax], int r, int c) {
-    int t[imax][imax]; // Use fixed-size array for safety
+    int t[imax][imax]; 
 
     // Transpose logic
     for (int i = 0; i < c; i++) {
@@ -13,7 +13,7 @@ void transpose(int arr[][imax], int r, int c) {
         }
     }
 
-    // Print transposed matrix
+    
     cout << "\nTranspose of the matrix:\n";
     for (int i = 0; i < c; i++) {
         for (int j = 0; j < r; j++) {
@@ -44,10 +44,11 @@ int main() {
         return 1;
     }
 
-    int arr[imax][imax]; // Use fixed-size array
+    int arr[imax][imax]; 
 
     create(arr, r, c);
     transpose(arr, r, c);
 
     return 0;
 }
+
