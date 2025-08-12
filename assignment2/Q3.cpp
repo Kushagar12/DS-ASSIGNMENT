@@ -8,24 +8,24 @@ int findMissing(int arr[], int n) {
     while (left <= right) {
         int mid = left + (right - left) / 2;
 
-        // Expected value at mid
+        
         int expected = start + mid;
 
         if (arr[mid] == expected) {
-            // Missing number is on the right
+            
             left = mid + 1;
         } else {
-            // Missing number is on the left
+            
             right = mid - 1;
         }
     }
 
-    // Missing number is at position 'left'
+    
     return start + left;
 }
 
 int main() {
-    int arr[] = {1, 2, 3, 4, 6, 7, 8};  // 5 is missing
+    int arr[] = {1, 2, 3, 4, 6, 7, 8};  
     int n = sizeof(arr) / sizeof(arr[0]);
 
     int missing = findMissing(arr, n);
@@ -33,3 +33,4 @@ int main() {
 
     return 0;
 }
+
