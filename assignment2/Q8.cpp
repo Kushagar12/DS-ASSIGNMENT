@@ -1,28 +1,39 @@
 #include <iostream>
-#include <set>
 using namespace std;
 
 int main() {
     int n;
-    cout << "Enter the number of elements: ";
+    cout << "Enter the length of the array: ";
     cin >> n;
 
     int arr[n];
-    cout << "Enter " << n << " elements:\n";
-
-    for (int i = 0; i < n; i++) {
+    cout << "Enter the elements:\n";
+    for(int i = 0; i < n; i++) {
         cin >> arr[i];
     }
 
-    set<int> distinctElements;
+    int distinctCount = 0;
 
-    
-    for (int i = 0; i < n; i++) {
-        distinctElements.insert(arr[i]);
+    for(int i = 0; i < n; i++) {
+        bool isDistinct = true;
+
+        
+        for(int j = 0; j < i; j++) {
+            if(arr[i] == arr[j]) {
+                isDistinct = false;
+                break;
+            }
+        }
+
+        if(isDistinct) {
+            distinctCount++;
+        }
     }
 
-    cout << "Total number of distinct elements: " << distinctElements.size() << endl;
+    cout << "Number of distinct elements: " << distinctCount << endl;
 
     return 0;
 }
+
+
 
