@@ -8,41 +8,36 @@ public:
     Node* left;
     Node* right;
 
-    Node(int v) {
-        data = v;
+    Node(int d) {
+        data = d;
         left = right = NULL;
     }
 };
 
-class BinaryTree {
-public:
-    Node* root;
 
-    BinaryTree() {
-        root = NULL;
-    }
+bool isBST(Node* root, int minVal, int maxVal) {
+    if (root == NULL)
+        return true;
 
-    bool isBSTUtil(Node* node, long long minVal, long long maxVal) {
-        if (!node) return true;
-        if (node->data <= minVal || node->data >= maxVal) return false;
-        return isBSTUtil(node->left, minVal, node->data) &&
-               isBSTUtil(node->right, node->data, maxVal);
-    }
+    if (root->data <= minVal || root->data >= maxVal)
+        return false;
 
-    bool isBST() {
-        return isBSTUtil(root, LLONG_MIN, LLONG_MAX);
-    }
-};
+    return isBST(root->left, minVal, root->data) &&
+           isBST(root->right, root->data, maxVal);
+}
 
 int main() {
-    BinaryTree t;
+   
+    Node* root = new Node(10);
+    root->left = new Node(5);
+    root->right = new Node(20);
+    root->left->left = new Node(3);
+    root->left->right = new Node(7);
 
-    t.root = new Node(10);
-    t.root->left = new Node(5);
-    t.root->right = new Node(20);
-    t.root->left->left = new Node(3);
-    t.root->left->right = new Node(7);
+    if (isBST(root, INT_MIN, INT_MAX))
+        cout << "It is a BST";
+    else
+        cout << "It is NOT a BST";
 
-    if (t.isBST()) cout << "Tree is BST";
-    else cout << "Tree is not BST";
+    return 0;
 }
