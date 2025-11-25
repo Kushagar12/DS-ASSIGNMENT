@@ -52,18 +52,31 @@ class BST {
         return node;
     }
 
-    int maxDepth(Node* node) {
-        if (!node) return 0;
-        return 1 + max(maxDepth(node->left), maxDepth(node->right));
-    }
+    int maxDepth(Node* root) {
+    if(root == NULL)
+        return 0;
 
-    int minDepth(Node* node) {
-        if (!node) return 0;
-        if (!node->left && !node->right) return 1;
-        if (!node->left) return 1 + minDepth(node->right);
-        if (!node->right) return 1 + minDepth(node->left);
-        return 1 + min(minDepth(node->left), minDepth(node->right));
-    }
+    int leftDepth  = maxDepth(root->left);
+    int rightDepth = maxDepth(root->right);
+
+    return 1 + max(leftDepth, rightDepth);
+}
+
+    int minDepth(Node* root) {
+    if(root == NULL)
+        return 0;
+
+    
+    if(root->left == NULL)
+        return 1 + minDepth(root->right);
+
+    
+    if(root->right == NULL)
+        return 1 + minDepth(root->left);
+
+    
+    return 1 + min(minDepth(root->left), minDepth(root->right));
+}
 
 public:
     BST() {
@@ -103,3 +116,4 @@ int main() {
     cout << "After deletion, Max Depth: " << tree.getMaxDepth() << endl;
     cout << "After deletion, Min Depth: " << tree.getMinDepth() << endl;
 }
+
